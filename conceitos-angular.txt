@@ -1,0 +1,7 @@
+// Observable => É um Objeto que se inscreve para receber notificações de mudanças em outros objetos
+
+// pipe => É um Método para encadear operadores de transformação no fluxo de dados do Observable
+
+// tap => Operador utilizado para side effects (efeitos colaterais), isto é, para percorrer cada elemento do array sem modificar o fluxo de dados do Observable
+
+// subscribe => Método para se inscrever e receber notifcações de um Observable
