@@ -1,0 +1,114 @@
+@import "../../../config/variables.scss";
+@import "../../../config/rem-calc.scss";
+
+:host {
+  .section__card__wizard {
+    background-color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: rem-calc(20);
+  }
+
+  .card__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: rem-calc(500);
+    gap: 2rem;
+  }
+
+  .card__wizard {
+    width: 100%;
+    max-width: rem-calc(600);
+    padding: rem-calc(40) rem-calc(20);
+    color: var(--primary);
+    border-radius: 8px;
+    background-color: var(--card);
+    display: flex;
+    justify-content: space-between;
+
+    &__box__info {
+      display: flex;
+      flex-direction: column;
+      gap: rem-calc(20);
+      list-style: square;
+    }
+
+    .wizard__image {
+      border-radius: 10px;
+    }
+
+    @media only screen and (max-width: 450px) {
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 2rem;
+
+      &__box__info {
+        display: flex;
+        flex-direction: column;
+        gap: rem-calc(10);
+      }
+    }
+  }
+
+  .card__wizard__name {
+    font-weight: 500;
+    font-size: 26px;
+    color: var(--white);
+  }
+
+  .card__wizard__informations {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 0 0 rem-calc(20);
+  }
+
+  .card__wizard__infomartions__list {
+    list-style: circle;
+    font-weight: 600;
+    color: var(--secondary);
+  }
+
+  .card__wizard__list__first__info {
+    display: flex;
+    gap: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    padding: 1rem;
+
+    .card__house {
+      background-color: rgb(124, 73, 211);
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      color: var(--white);
+    }
+
+    .card__specie {
+      background-color: rgb(72, 164, 249);
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      color: var(--white);
+    }
+  }
+
+  .btn__back {
+    padding: rem-calc(15) rem-calc(30);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 10px;
+    background-color: rgb(124, 73, 211);
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+}

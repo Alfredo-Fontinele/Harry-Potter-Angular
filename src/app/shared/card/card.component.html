@@ -1,1 +1,15 @@
-<p>card works!</p>
+<a class="card__wizard" [routerLink]="['details', currentWizard.id]">
+  <div class="card__wizard__box__info">
+    <li>{{ currentWizard.name }}</li>
+    <ul class="card__wizard__basic__info">
+      <li>{{ currentWizard.species | titlecase }}</li>
+      <li>{{ currentWizard.house | titlecase }}</li>
+    </ul>
+  </div>
+  <img
+    ngSrc="{{ currentWizard.image }}"
+    alt="{{ currentWizard.name }}"
+    width="120"
+    height="150"
+  />
+</a>

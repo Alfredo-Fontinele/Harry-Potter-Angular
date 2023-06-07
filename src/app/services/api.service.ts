@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
-import { Observable, tap } from 'rxjs'
+import { Observable, map, tap } from 'rxjs'
 
 interface WandProps {
   wood: string
@@ -8,7 +8,7 @@ interface WandProps {
   length: number | null
 }
 
-export interface CharacterProps {
+export interface WizardProps {
   id: string
   name: string
   alternate_names: string[]
@@ -39,7 +39,19 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  findAll(): Observable<CharacterProps[]> {
-    return this.http.get<CharacterProps[]>(`${this.baseUrl}/characters`)
+  findAll(): Observable<WizardProps[]> {
+    return this.http
+      .get<WizardProps[]>(`${this.baseUrl}/characters`)
+      .pipe(
+        map((wizards) =>
+          wizards.filter((wizard) => wizard.image && wizard.house)
+        )
+      )
+  }
+
+  findOne(id: string): Observable<WizardProps[]> {
+    return this.http
+      .get<WizardProps[]>(`${this.baseUrl}/character/${id}`)
+      .pipe(tap((res) => res.map((res) => res)))
   }
 }

@@ -1,0 +1,70 @@
+@import "../../../config/rem-calc.scss";
+@import "../../../config/variables.scss";
+
+$padding: rem-calc(10);
+
+:host {
+  .card__wizard {
+    display: flex;
+    justify-content: space-between;
+    color: var(--white);
+    text-decoration: none;
+    gap: rem-calc(20);
+    padding: rem-calc(20) rem-calc(20) rem-calc(20) rem-calc(30);
+    width: 100%;
+    min-width: rem-calc(350);
+    max-width: rem-calc(380);
+    border-radius: 10px;
+    transition: all 0.6s;
+    background-color: var(--card);
+    cursor: pointer;
+
+    &__box__info {
+      display: flex;
+      flex-direction: column;
+      gap: rem-calc(20);
+
+      li {
+        list-style: square;
+      }
+    }
+
+    &__basic__info {
+      display: flex;
+      flex-direction: column;
+      gap: rem-calc(20);
+
+      :nth-child(1) {
+        list-style: none;
+        background-color: rgb(63, 228, 181);
+        color: var(--white);
+        border-radius: rem-calc(5);
+        font-weight: 400;
+        font-size: 15px;
+        padding: rem-calc(3) rem-calc(10);
+        text-align: center;
+        max-width: 100px;
+      }
+
+      :nth-child(2) {
+        list-style: none;
+        background-color: rgb(147, 78, 237);
+        color: var(--white);
+        border-radius: rem-calc(5);
+        font-weight: 400;
+        font-size: 15px;
+        padding: rem-calc(3) rem-calc(10);
+        text-align: center;
+        max-width: 100px;
+      }
+    }
+
+    img {
+      border-radius: rem-calc(5);
+    }
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+}

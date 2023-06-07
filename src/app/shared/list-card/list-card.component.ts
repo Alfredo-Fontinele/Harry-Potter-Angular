@@ -1,16 +1,17 @@
 import { Component } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { ApiService, CharacterProps } from 'src/app/services/api.service'
+import { ApiService, WizardProps } from 'src/app/services/api.service'
+import { CardComponent } from '../card/card.component'
 
 @Component({
   selector: 'list-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CardComponent],
   templateUrl: './list-card.component.html',
   styleUrls: ['./list-card.component.scss'],
 })
 export class ListCardComponent {
-  characters: CharacterProps[] = []
+  wizards: WizardProps[] = []
 
   constructor(private apiService: ApiService) {
     this.findAll()
@@ -18,10 +19,7 @@ export class ListCardComponent {
 
   findAll() {
     this.apiService.findAll().subscribe({
-      next: (characters) => {
-        this.characters = characters
-        console.log(characters)
-      },
+      next: (wizards) => ((this.wizards = wizards), console.log(wizards)),
     })
   }
 }

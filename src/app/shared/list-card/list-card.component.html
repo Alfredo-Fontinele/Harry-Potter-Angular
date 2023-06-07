@@ -1,1 +1,6 @@
-<p>list-card works!</p>
+<section class="section__container">
+  <h1>Harry Potter | Angular</h1>
+  <ul class="list">
+    <card-wizard *ngFor="let wizard of wizards" [currentWizard]="wizard" />
+  </ul>
+</section>

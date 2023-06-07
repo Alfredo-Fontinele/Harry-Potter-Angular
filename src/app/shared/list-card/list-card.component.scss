@@ -1,0 +1,23 @@
+@import "../../../config/rem-calc.scss";
+
+:host {
+  .section__container {
+    display: flex;
+    flex-direction: column;
+    padding: rem-calc(25) rem-calc(15);
+
+    h1 {
+      text-align: center;
+      font-size: 40px;
+    }
+
+    .list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: rem-calc(30);
+      width: 100%;
+      padding: rem-calc(50) rem-calc(20);
+    }
+  }
+}
